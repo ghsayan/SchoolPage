@@ -81,7 +81,7 @@ body{
 }
 .footBar{
     padding: 10px;
-    height: 350px;
+    min-height: 350px;
     background-color: #DAE0E2;
 }
 .footTitle{
@@ -100,8 +100,13 @@ body{
     font-weight: 100;
 }
 .footBox{
-    height: 400px;
+    min-height: 400px;
     padding: 25px;
+}
+.footbtn{
+    position: absolute;
+    left:  20px;
+    bottom: 20px;
 }
 .copyrightbar{
     background-color: black;
@@ -133,3 +138,5 @@ body{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
+
+  

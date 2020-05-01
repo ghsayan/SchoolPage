@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <form id="det">
+            <div class="form-group w-75">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group w-75">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group w-75">
+                <label for="msg">Message:</label>
+                <textarea type="text" class="form-control" id="msg" rows=3></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="onsubmit" onclick="this.disabled=true">Submit</button>
+        </form>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $('#onsubmit').click(function(){
+          $.post('details.php',{
+            name: $('#name').val(),
+            email: $('#email').val(),
+            msg: $('#msg').val(),
+          },function(data){
+            $('#det').html(data);
+          });
+        });
+      });
+    </script>
+  </body>
+  </html>
